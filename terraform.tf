@@ -1,12 +1,4 @@
 terraform {
-  cloud {
-    organization = "cw_playground_mhoehl"
-
-    workspaces {
-      name = "rancher-demo"
-    }
-  }
-
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
