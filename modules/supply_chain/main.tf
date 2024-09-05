@@ -6,7 +6,7 @@ resource "azurerm_container_registry" "default_acr" {
   admin_enabled       = true
 
   network_rule_set {
-    default_action = "Allow"
+    default_action = "Deny"
   }
 }
 
