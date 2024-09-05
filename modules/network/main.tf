@@ -10,6 +10,7 @@ resource "azurerm_subnet" "default_subnet" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.k8s_vnet.name
   address_prefixes     = ["10.0.0.160/28"]
+  service_endpoints    = ["Microsoft.ContainerRegistry"]
 }
 
 resource "azurerm_subnet" "bastion_subnet" {
