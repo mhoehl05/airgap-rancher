@@ -6,12 +6,7 @@ resource "azurerm_container_registry" "default_acr" {
   admin_enabled       = true
 
   network_rule_set {
-    default_action = "Deny"
-    ip_rule {
-      action   = "Allow"
-      ip_range = "10.0.0.160/28"
-    }
-  }
+    default_action = "Allow"
 }
 
 resource "azurerm_private_endpoint" "pep" {
