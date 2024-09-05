@@ -38,6 +38,13 @@ resource "azurerm_private_dns_zone" "acr" {
   resource_group_name = var.resource_group_name
 }
 
+resource "azurerm_private_dns_zone_virtual_network_link" "dns_vnet_link" {
+  name                  = "dns-vnet-link"
+  resource_group_name   = var.resource_group_name
+  private_dns_zone_name = azurerm_private_dns_zone.acr.name
+  virtual_network_id    = azurerm_virtual_network.example.id
+}
+
 resource "azurerm_private_dns_a_record" "pep_dns_record_data" {
   name                = lower(format("%s.%s.data", azurerm_container_registry.default_acr.name, var.location))
   zone_name           = azurerm_private_dns_zone.acr.name

@@ -25,4 +25,5 @@ module "supply_chain" {
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
   subnet_id           = module.network.node_subnet
+  vnet_id             = module.network.vnet_id
 }

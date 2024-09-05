@@ -13,4 +13,7 @@ variable "subnet_id" {
   default = ""
 }
 
-
+variable "vnet_id" {
+  type        = string
+  default     = ""
+}
