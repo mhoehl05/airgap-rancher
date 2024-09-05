@@ -3,5 +3,5 @@ output "node_subnet" {
 }
 
 output "vnet_id" {
-  value = azurerm_subnet.k8s_vnet.id
+  value = azurerm_virtual_network.k8s_vnet.id
 }
