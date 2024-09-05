@@ -7,6 +7,7 @@ resource "azurerm_container_registry" "default_acr" {
 
   network_rule_set {
     default_action = "Allow"
+  }
 }
 
 resource "azurerm_private_endpoint" "pep" {
