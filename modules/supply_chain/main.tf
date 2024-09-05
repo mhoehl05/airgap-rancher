@@ -8,7 +8,7 @@ resource "azurerm_container_registry" "default_acr" {
   network_rule_set {
     default_action = "Deny"
     ip_rule {
-      action = "Allow"
+      action   = "Allow"
       ip_range = "10.0.0.160/28"
     }
   }

@@ -9,8 +9,8 @@ variable "resource_group_name" {
 }
 
 variable "subnet_id" {
-  type        = string
-  default     = ""
+  type    = string
+  default = ""
 }
 
 
