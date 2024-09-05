@@ -4,6 +4,10 @@ resource "azurerm_container_registry" "default_acr" {
   location            = var.location
   sku                 = "Premium"
   admin_enabled       = true
+
+  network_rule_set {
+    default_action = "Deny"
+  }
 }
 
 resource "azurerm_private_endpoint" "pep" {
