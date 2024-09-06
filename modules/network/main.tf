@@ -50,7 +50,7 @@ resource "azurerm_network_security_group" "default_nsg" {
 
   security_rule {
     name                       = "DenyInternetOutBound"
-    priority                   = 64999
+    priority                   = 4500
     direction                  = "Outbound"
     access                     = "Deny"
     protocol                   = "*"
@@ -62,7 +62,7 @@ resource "azurerm_network_security_group" "default_nsg" {
 
   security_rule {
     name                       = "bastion-ssh-inbound"
-    priority                   = 50000
+    priority                   = 1000
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
