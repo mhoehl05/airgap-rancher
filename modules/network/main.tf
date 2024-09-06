@@ -50,7 +50,7 @@ resource "azurerm_network_security_group" "default_nsg" {
 
   security_rule {
     name                       = "DenyInternetOutBound"
-    priority                   = 4500
+    priority                   = 4000
     direction                  = "Outbound"
     access                     = "Deny"
     protocol                   = "*"
