@@ -49,32 +49,20 @@ resource "azurerm_network_security_group" "default_nsg" {
   resource_group_name = var.resource_group_name
 
   security_rule {
-    name                       = "deny-all-inbound"
-    priority                   = 200
-    direction                  = "Inbound"
-    access                     = "Deny"
-    protocol                   = "*"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
-
-  security_rule {
-    name                       = "deny-all-outbound"
-    priority                   = 200
+    name                       = "DenyInternetOutBound"
+    priority                   = 64999
     direction                  = "Outbound"
     access                     = "Deny"
     protocol                   = "*"
     source_port_range          = "*"
     destination_port_range     = "*"
     source_address_prefix      = "*"
-    destination_address_prefix = "*"
+    destination_address_prefix = "Internet"
   }
 
   security_rule {
     name                       = "bastion-ssh-inbound"
-    priority                   = 190
+    priority                   = 50000
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
